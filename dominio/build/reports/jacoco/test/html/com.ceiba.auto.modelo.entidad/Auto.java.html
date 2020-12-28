@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Auto.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.auto.modelo.entidad</a> &gt; <span class="el_source">Auto.java</span></div><h1>Auto.java</h1><pre class="source lang-java linenums">package com.ceiba.auto.modelo.entidad;
+import lombok.Getter;
+import static com.ceiba.dominio.ValidadorArgumento.validarLongitudIgual;
+import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+import static com.ceiba.dominio.ValidadorArgumento.validarCantidadDigitosCadena;
+
+
+@Getter
+public class Auto {
+	
+    private static final String SE_DEBE_INGRESAR_LA_PLACA = &quot;Se debe ingresar la placa del Auto&quot;;
+    private static final String SE_DEBE_INGRESAR_EL_TIPO_COMBUSTIBLE = &quot;Se debe ingresar el tipo de combustible&quot;;
+    private static final String LA_PLACA_DEBE_TENER_UNA_LONGITUD_IGUAL_A = &quot;La placa debe tener una longitud igual a %s&quot;;
+    private static final String LA_PLACA_DEBE_TENER_TRES_DIGITOS = &quot;La placa debe tener tres digitos&quot;;
+    
+    private static final int LONGITUD_PLACA = 6;
+    private static final int CANTIDAD_DIGITOS_PLACA = 3;
+    
+<span class="nc" id="L19">    private Long id;</span>
+<span class="nc" id="L20">    private String placa;</span>
+<span class="nc" id="L21">    private String tipoCombustible;</span>
+<span class="nc" id="L22">    private Boolean rentado;</span>
+
+<span class="nc" id="L24">	public Auto(Long id, String placa, String tipoCombustible, Boolean rentado) {</span>
+		
+<span class="nc" id="L26">		validarObligatorio(placa, SE_DEBE_INGRESAR_LA_PLACA);</span>
+<span class="nc" id="L27">		validarObligatorio(tipoCombustible, SE_DEBE_INGRESAR_EL_TIPO_COMBUSTIBLE);</span>
+<span class="nc" id="L28">		validarLongitudIgual(placa, LONGITUD_PLACA, LA_PLACA_DEBE_TENER_UNA_LONGITUD_IGUAL_A);</span>
+<span class="nc" id="L29">		validarCantidadDigitosCadena(placa, CANTIDAD_DIGITOS_PLACA, LA_PLACA_DEBE_TENER_TRES_DIGITOS);</span>
+		
+<span class="nc" id="L31">		this.id = id;</span>
+<span class="nc" id="L32">		this.placa = placa;</span>
+<span class="nc" id="L33">		this.tipoCombustible = tipoCombustible;</span>
+<span class="nc" id="L34">		this.rentado = rentado;</span>
+<span class="nc" id="L35">	}</span>
+
+}
+
+
+
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
